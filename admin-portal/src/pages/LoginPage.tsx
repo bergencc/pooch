@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { useAuth } from '../hooks/useAuth'
+import { useAuth } from '@/hooks/useAuth'
 import { Dog, Eye, EyeOff, AlertCircle } from 'lucide-react'
-import { getErrorMessage } from '../lib/utils'
+import { getErrorMessage } from '@/lib/utils'
 
 const loginSchema = z.object({
     email: z.string().email('Invalid email address'),
