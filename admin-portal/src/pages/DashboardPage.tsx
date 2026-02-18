@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import api from '../lib/api'
+import api from '@/lib/api'
 import type {AdminStats} from '@/types'
 import { Package, Users, Dog, ScanLine, Plus, ArrowRight } from 'lucide-react'
 
