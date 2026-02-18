@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import List
 import json
 
@@ -21,13 +21,12 @@ class Settings(BaseSettings):
 
     # app
     DEBUG: bool = True
-    CORS_ORIGINS: str = ''
+    CORS_ORIGINS: str = "[]"
 
     def get_cors_origins(self) -> List[str]:
         return json.loads(self.CORS_ORIGINS)
 
-    class Config:
-        env_file = ".env"
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
 
 settings = Settings()
