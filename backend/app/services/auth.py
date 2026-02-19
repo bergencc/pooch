@@ -1,10 +1,21 @@
 from datetime import datetime, timedelta, timezone
 from typing import Optional
+
+import bcrypt
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
+
 from app.config import settings
 from app.models.models import User
+
+# passlib 1.7.4 expects bcrypt.__about__.__version__, which was removed in
+# newer bcrypt releases. Provide a minimal compatibility shim.
+if not hasattr(bcrypt, "__about__"):
+    class _BcryptAbout:
+        __version__ = bcrypt.__version__
+
+    bcrypt.__about__ = _BcryptAbout()
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto", bcrypt__rounds=12)
 
