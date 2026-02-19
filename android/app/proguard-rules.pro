@@ -19,3 +19,35 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+# Keep Retrofit models
+
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class org.bosf.pooch.data.api.models.** { *; }
+
+# Gson
+-keepattributes Signature
+-dontwarn sun.misc.**
+-keep class com.google.gson.** { *; }
+
+# Retrofit
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-keepclasseswithmembers class * {
+    @retrofit2.http.* <methods>;
+}
+
+# OkHttp
+-dontwarn okhttp3.**
+-dontwarn okio.**
+
+# Room
+-keep class * extends androidx.room.RoomDatabase
+-dontwarn androidx.room.paging.**
+
+# Hilt
+-keep class dagger.hilt.** { *; }
+-keep class javax.inject.** { *; }
+
+# ML Kit
+-keep class com.google.mlkit.** { *; }
