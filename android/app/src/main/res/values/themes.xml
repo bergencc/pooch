@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <style name="Theme.PoochScan" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.PoochScan.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#FF6B35</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.PoochScan</item>
+    </style>
 </resources>
