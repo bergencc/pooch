@@ -58,8 +58,8 @@ struct LoginView: View {
                                 label: "Password",
                                 text: $password,
                                 icon: "lock.fill",
-                                isSecure: !showPassword,
-                                textContentType: .password
+                                textContentType: .password,
+                                isSecure: !showPassword
                             )
                             Button {
                                 showPassword.toggle()
