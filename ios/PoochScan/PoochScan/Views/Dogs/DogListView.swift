@@ -1,5 +1,4 @@
 import SwiftUI
-import PhotosUI
 
 struct DogListView: View {
     @EnvironmentObject var dogsVM: DogsViewModel
