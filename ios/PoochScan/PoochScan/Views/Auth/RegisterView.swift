@@ -48,15 +48,15 @@ struct RegisterView: View {
                             label: "Password (min 8 chars)",
                             text: $password,
                             icon: "lock.fill",
-                            isSecure: !showPassword,
-                            textContentType: .newPassword
+                            textContentType: .newPassword,
+                            isSecure: !showPassword
                         )
                         FloatingLabelField(
                             label: "Confirm Password",
                             text: $confirmPassword,
                             icon: "lock.fill",
-                            isSecure: !showPassword,
-                            textContentType: .newPassword
+                            textContentType: .newPassword,
+                            isSecure: !showPassword
                         )
 
                         if !confirmPassword.isEmpty && !passwordsMatch {
@@ -110,3 +110,4 @@ struct RegisterView: View {
         }
     }
 }
+
