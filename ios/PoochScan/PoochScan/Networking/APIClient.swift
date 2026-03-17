@@ -129,7 +129,7 @@ class APIClient: ObservableObject {
 
     func deleteDog(id: String) async throws {
         let url = try makeURL("/dogs/\(id)")
-        var req = makeRequest(url, method: "DELETE")
+        let req = makeRequest(url, method: "DELETE")
         let (_, response) = try await URLSession.shared.data(for: req)
         
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
