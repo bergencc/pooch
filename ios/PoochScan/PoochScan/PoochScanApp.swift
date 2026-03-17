@@ -6,7 +6,7 @@ struct PoochScanApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppRootView()
                 .environmentObject(authViewModel)
         }
     }
