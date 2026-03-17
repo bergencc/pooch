@@ -1,0 +1,5 @@
+/*
+ PoochScan build settings
+ Use this config to enforce Swift compiler tasks to block downstream targets
+*/
+ENABLE_BUILD_WITH_COMPILER_TASKS = YES
